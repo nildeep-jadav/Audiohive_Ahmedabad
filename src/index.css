@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Zuume Rough", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-roboto: "Roboto Condensed", sans-serif;
+
+  --color-audiohive-red: #DFB15B;
+  --color-gold-accent: #DFB15B;
+  --color-gold-hover: #C59B4C;
+  --color-pale-yellow: #FFE49E;
+  
+  --color-dark: #0B0B0B;
+  --color-dark-secondary: #1a1a1a;
+  --color-dark-tertiary: #2a2a2a;
+
+  --shadow-glow-red: 0 0 40px rgba(223, 177, 91, 0.3);
+  --shadow-glow-red-lg: 0 0 80px rgba(223, 177, 91, 0.4);
+
+  --animate-glow: glow 2s ease-in-out infinite;
+
+  @keyframes glow {
+    0%, 100% {
+      box-shadow: 0 0 40px rgba(223, 177, 91, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 80px rgba(223, 177, 91, 0.6);
+    }
+  }
+}
+
+@font-face {
+  font-family: 'Zuume Rough';
+  src: url('./assets/fonts/ZuumeRough-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zuume Rough';
+  src: url('./assets/fonts/ZuumeRough-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zuume Rough';
+  src: url('./assets/fonts/ZuumeRough-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zuume Rough';
+  src: url('./assets/fonts/ZuumeRough-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-white;
+    font-family: 'Roboto Condensed', system-ui, sans-serif;
+    background-color: #0B0B0B;
+  }
+
+  h1, h2, h3, h4, h5, h6, .hero-text, .section-heading {
+    font-family: 'Zuume Rough', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+
+  /* Force all navbar and mobile drawer texts to use Roboto Condensed */
+  nav, nav *, [class*="fixed top-[72px]"], [class*="fixed top-[72px]"] * {
+    font-family: 'Roboto Condensed', sans-serif !important;
+  }
+}
+
+@layer components {
+  .hero-text {
+    @apply text-5xl md:text-6xl lg:text-7xl font-bold leading-tight;
+  }
+
+  .section-heading {
+    @apply text-4xl md:text-5xl font-bold;
+  }
+
+  .premium-card {
+    @apply bg-[#1a1a1a] rounded-2xl p-8 border border-[#2a2a2a] hover:border-[#DFB15B] transition-colors duration-300;
+  }
+
+  .btn-primary {
+    @apply px-8 py-3 bg-[#DFB15B] text-white rounded-lg font-semibold hover:bg-[#C59B4C] transition-colors duration-300;
+  }
+
+  .btn-secondary {
+    @apply px-8 py-3 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-[#0B0B0B] transition-colors duration-300;
+  }
+
+  .divider {
+    @apply h-px bg-gradient-to-r from-transparent via-[#2a2a2a] to-transparent;
+  }
+}
+
+* {
+  scroll-behavior: smooth;
+}
