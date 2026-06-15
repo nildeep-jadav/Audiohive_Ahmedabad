@@ -49,9 +49,9 @@ export default function Hero() {
 
 
             <motion.h1 variants={itemVariants} className="hero-text tracking-tight font-black leading-none">
-              Premium Sound.<br />
+              Premium Sound<br />
               <span className="text-[#DFB15B] bg-clip-text text-transparent bg-gradient-to-r from-[#DFB15B] to-[#FFE49E]">
-                Elevated Experiences.
+                Elevated Experiences
               </span>
             </motion.h1>
 
