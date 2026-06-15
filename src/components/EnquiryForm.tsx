@@ -85,7 +85,7 @@ export default function EnquiryForm() {
               {/* Phone card */}
               <motion.a
                 variants={itemVariants}
-                href="tel:+917004388880"
+                href="tel:+919213548316"
                 className="flex items-center gap-5 p-5 bg-[#1a1a1a] hover:bg-[#2a2a2a] border border-[#2a2a2a] hover:border-[#DFB15B]/40 rounded-2xl transition-all duration-300 group"
               >
                 <div className="w-12 h-12 rounded-xl bg-[#DFB15B]/10 flex items-center justify-center group-hover:bg-[#DFB15B]/20 transition-all duration-300">
@@ -93,14 +93,14 @@ export default function EnquiryForm() {
                 </div>
                 <div>
                   <p className="text-xs text-gray-500 font-bold uppercase tracking-wider">Phone Call</p>
-                  <p className="text-white font-bold text-lg mt-0.5">+91 70043 88880</p>
+                  <p className="text-white font-bold text-lg mt-0.5">+91 92135 48316</p>
                 </div>
               </motion.a>
 
               {/* WhatsApp card */}
               <motion.a
                 variants={itemVariants}
-                href="https://wa.me/917004388880"
+                href="https://wa.me/919213548316"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-5 p-5 bg-[#1a1a1a] hover:bg-[#2a2a2a] border border-[#2a2a2a] hover:border-[#25D366]/40 rounded-2xl transition-all duration-300 group"
@@ -110,7 +110,7 @@ export default function EnquiryForm() {
                 </div>
                 <div>
                   <p className="text-xs text-gray-500 font-bold uppercase tracking-wider">WhatsApp chat</p>
-                  <p className="text-white font-bold text-lg mt-0.5">+91 70043 88880</p>
+                  <p className="text-white font-bold text-lg mt-0.5">+91 92135 48316</p>
                 </div>
               </motion.a>
 

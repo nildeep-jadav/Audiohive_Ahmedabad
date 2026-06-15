@@ -111,14 +111,14 @@ export default function Navbar() {
           {/* Quick CTAs */}
           <div className="hidden sm:flex items-center gap-4">
             <a
-              href="tel:+917004388880"
+              href="tel:+919213548316"
               className="flex items-center gap-2 text-sm text-gray-300 hover:text-white transition-colors py-2 px-3 rounded-lg border border-[#2a2a2a]"
             >
               <Phone className="w-4 h-4 text-[#DFB15B]" />
-              <span className="font-medium">+91 70043 88880</span>
+              <span className="font-medium">+91 92135 48316</span>
             </a>
             <a
-              href="https://wa.me/917004388880?text=Hi%20Audiohive,%20I'm%20planning%20an%20event%20and%20would%20like%20to%20get%20a%20quote."
+              href="https://wa.me/919213548316?text=Hi%20Audiohive,%20I'm%20planning%20an%20event%20and%20would%20like%20to%20get%20a%20quote."
               target="_blank"
               rel="noopener noreferrer"
               className="px-5 py-2 text-sm font-bold bg-[#DFB15B] hover:bg-[#C59B4C] text-white rounded-lg transition-colors flex items-center gap-2"
@@ -131,7 +131,7 @@ export default function Navbar() {
           {/* Mobile menu button */}
           <div className="flex lg:hidden items-center gap-4">
             <a
-              href="https://wa.me/917004388880"
+              href="https://wa.me/919213548316"
               target="_blank"
               rel="noopener noreferrer"
               className="sm:hidden p-2 text-gray-300 hover:text-white transition-colors"
@@ -181,14 +181,14 @@ export default function Navbar() {
 
             <div className="flex flex-col gap-4 mt-8 pb-8">
               <a
-                href="tel:+917004388880"
+                href="tel:+919213548316"
                 className="flex items-center justify-center gap-3 text-lg text-white font-semibold py-4 rounded-xl border border-[#2a2a2a] bg-[#1a1a1a]"
               >
                 <Phone className="w-5 h-5 text-[#DFB15B]" />
-                +91 70043 88880
+                +91 92135 48316
               </a>
               <a
-                href="https://wa.me/917004388880?text=Hi%20Audiohive,%20I'm%20planning%20an%20event%20and%20would%20like%20to%20get%20a%20quote."
+                href="https://wa.me/919213548316?text=Hi%20Audiohive,%20I'm%20planning%20an%20event%20and%20would%20like%20to%20get%20a%20quote."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-3 text-lg text-white font-bold py-4 rounded-xl bg-[#DFB15B] hover:bg-[#C59B4C] transition-colors"

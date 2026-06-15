@@ -6,7 +6,7 @@ const equipmentList = [
   {
     id: 'jbl-prx-one',
     name: 'JBL PRX ONE',
-    image: '/images/jbl_prx_one.png',
+    image: '/images/Speakers/JBL-PRX-ONE.jpg',
     idealFor: ['Weddings', 'Live Singing Performances', 'Corporate Events', 'Indoor Gatherings'],
     features: [
       'Premium Vocal Clarity',
@@ -19,7 +19,7 @@ const equipmentList = [
   {
     id: 'yamaha-stagepas',
     name: 'Yamaha Stagepas 1K',
-    image: '/images/yamaha_stagepas.png',
+    image: '/images/Speakers/YAMAHA-STAGEPASS.jpg',
     idealFor: ['Private Events', 'Small Weddings', 'Corporate Meetings', 'Outdoor Gatherings'],
     features: [
       'Compact Design',
@@ -32,7 +32,7 @@ const equipmentList = [
   {
     id: 'wireless-mics',
     name: 'Wireless Microphones',
-    image: '/images/wireless_mic.png',
+    image: '/images/Speakers/Wireless-Microphones.jpg',
     features: [
       'Crystal Clear Audio',
       'Reliable Connectivity',
@@ -43,7 +43,7 @@ const equipmentList = [
   {
     id: 'audio-mixers',
     name: 'Audio Mixers & Accessories',
-    image: '/images/audio_mixer.png',
+    image: '/images/Speakers/Yamaha MG10X Mixing Console.jpg',
     features: [
       'Professional Audio Control',
       'Event-Ready Setup',
@@ -150,7 +150,7 @@ export default function Equipment() {
 
                 <div className="pt-4 border-t border-[#2a2a2a]">
                   <a
-                    href={`https://wa.me/917004388880?text=${encodeURIComponent(item.whatsappMsg)}`}
+                    href={`https://wa.me/919213548316?text=${encodeURIComponent(item.whatsappMsg)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full py-3 bg-[#DFB15B] hover:bg-[#C59B4C] text-white font-bold rounded-xl transition-colors flex items-center justify-center gap-2 cursor-pointer text-sm"

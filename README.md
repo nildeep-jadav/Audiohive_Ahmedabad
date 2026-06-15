@@ -111,7 +111,7 @@ Update component text content directly in the React files to match your brand me
 ## 📞 Contact Information
 
 Update in `Footer.tsx`:
-- Phone: +91 70043 88880
+- Phone: +91 92135 48316
 - Email: info@audiohive.in
 - Instagram: @audiohive_ahmedabad
 

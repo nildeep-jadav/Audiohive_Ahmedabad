@@ -146,10 +146,10 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-[#DFB15B] flex-shrink-0 mt-0.5" />
                 <a
-                  href="tel:+917004388880"
+                  href="tel:+919213548316"
                   className="text-gray-400 hover:text-white transition-colors text-sm"
                 >
-                  +91 70043 88880
+                  +91 92135 48316
                 </a>
               </li>
               <li className="flex items-start gap-3">
@@ -186,7 +186,7 @@ export default function Footer() {
 
       {/* Floating WhatsApp Widget */}
       <a
-        href="https://wa.me/917004388880?text=Hi%20Audiohive,%20I'm%20planning%20an%20event%20and%20would%20like%20to%20get%20a%20quote."
+        href="https://wa.me/919213548316?text=Hi%20Audiohive,%20I'm%20planning%20an%20event%20and%20would%20like%20to%20get%20a%20quote."
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-8 right-8 w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center text-white shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 z-50 animate-bounce group"

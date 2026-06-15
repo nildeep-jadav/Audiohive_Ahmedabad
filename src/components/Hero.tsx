@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ChevronDown, Play, Sparkles } from 'lucide-react';
+import { ArrowDown, ChevronDown, Sparkles } from 'lucide-react';
 
 export default function Hero() {
   const containerVariants = {
@@ -92,12 +92,12 @@ export default function Hero() {
             className="lg:col-span-5 relative w-full flex justify-center"
           >
             {/* Glowing outer frame */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#DFB15B] to-[#FFE49E] rounded-3xl opacity-20 filter blur-xl animate-pulse" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#DFB15B] to-[#FFE49E] rounded-3xl opacity-20 filter blur-xl" />
 
             <div className="relative premium-card p-2 bg-[#1a1a1a] rounded-3xl border border-[#2a2a2a] hover:border-[#DFB15B]/50 transition-all duration-500 max-w-md w-full overflow-hidden shadow-2xl group">
               <div className="relative h-[420px] rounded-2xl overflow-hidden">
                 <img
-                  src="/images/hero_bg.png"
+                  src="/images/Audiohive Ahmedabad Hero Image.jpg"
                   alt="Audiohive Premium Event Sound Setup"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
@@ -114,7 +114,7 @@ export default function Hero() {
                     onClick={(e) => handleScrollTo(e, 'gallery')}
                     className="w-10 h-10 rounded-full bg-[#DFB15B] hover:bg-[#C59B4C] flex items-center justify-center text-white transition-colors"
                   >
-                    <Play className="w-4 h-4 fill-white ml-0.5" />
+                    <ArrowDown className="w-5 h-5" />
                   </a>
                 </div>
               </div>

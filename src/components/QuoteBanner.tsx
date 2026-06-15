@@ -56,7 +56,7 @@ export default function QuoteBanner() {
             </button>
 
             <a
-              href="https://wa.me/917004388880?text=Hi%20Audiohive,%20I'm%20planning%20an%20event%20and%20need%20a%20quotation%20for%20the%20sound%20setup."
+              href="https://wa.me/919213548316?text=Hi%20Audiohive,%20I'm%20planning%20an%20event%20and%20need%20a%20quotation%20for%20the%20sound%20setup."
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto px-8 py-4 bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold rounded-xl transition-all flex items-center justify-center gap-2 hover:scale-[1.02]"
@@ -66,7 +66,7 @@ export default function QuoteBanner() {
             </a>
 
             <a
-              href="tel:+917004388880"
+              href="tel:+919213548316"
               className="w-full sm:w-auto px-8 py-4 bg-transparent border border-[#2a2a2a] hover:border-white text-white font-bold rounded-xl transition-all flex items-center justify-center gap-2 hover:scale-[1.02]"
             >
               <Phone className="w-5 h-5 text-[#DFB15B]" />

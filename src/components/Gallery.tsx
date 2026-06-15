@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Play, Image as ImageIcon, Video, RotateCw } from 'lucide-react';
+import { Play, Image as ImageIcon, Video, X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const categories = [
   'All',
@@ -9,70 +9,165 @@ const categories = [
   'Corporate Events',
   'Live Performances',
   'Private Celebrations',
-  'Government Events',
 ];
 
-const galleryItems = [
+interface GalleryItem {
+  id: number;
+  title: string;
+  category: string;
+  type: string;
+  icon: any;
+  src: string;
+  isVideo: boolean;
+}
+
+const galleryItems: GalleryItem[] = [
   {
     id: 1,
-    title: 'Grand Palace Reception Setup',
+    title: 'Grand Wedding Audio Setup',
     category: 'Weddings',
     type: 'Setup Photo',
     icon: ImageIcon,
-    image: '/images/gallery_wedding.png',
+    src: '/images/Gallery/images/Wedding.jpg',
+    isVideo: false,
   },
   {
     id: 2,
-    title: 'Annual Leadership Summit',
-    category: 'Corporate Events',
-    type: 'Event Video',
-    icon: Video,
-    image: '/images/gallery_corporate.png',
-    isVideo: true,
+    title: 'Live Concert Sound Check',
+    category: 'Live Performances',
+    type: 'Setup Photo',
+    icon: ImageIcon,
+    src: '/images/Gallery/images/Live Performance.jpg',
+    isVideo: false,
   },
   {
     id: 3,
-    title: 'Acoustic Concert Sound Check',
-    category: 'Live Performances',
-    type: 'Event Photo',
+    title: 'Audio Console & FOH Support',
+    category: 'Corporate Events',
+    type: 'Console Photo',
     icon: ImageIcon,
-    image: '/images/gallery_live.png',
+    src: '/images/Gallery/images/Technical Support.jpg',
+    isVideo: false,
   },
   {
     id: 4,
-    title: 'Luxury Rooftop Sundowner',
-    category: 'Private Celebrations',
-    type: 'Before & After Venue Transformation',
-    icon: RotateCw,
-    image: '/images/gallery_celebration.png',
-    isBeforeAfter: true,
+    title: 'Elite Banquet Hall Sound Rigging',
+    category: 'Weddings',
+    type: 'Venue Photo',
+    icon: ImageIcon,
+    src: '/images/Gallery/images/Gallery_02.jpg',
+    isVideo: false,
   },
   {
     id: 5,
-    title: 'State VIP Press Meet',
-    category: 'Government Events',
+    title: 'Luxury Indoor Event Acoustics',
+    category: 'Private Celebrations',
     type: 'Setup Photo',
     icon: ImageIcon,
-    image: '/images/gallery_government.png',
+    src: '/images/Gallery/images/Gallery_06.jpg',
+    isVideo: false,
   },
   {
     id: 6,
-    title: 'DJ Sangeet Night Party',
-    category: 'Weddings',
-    type: 'Instagram Reel',
+    title: 'Audiohive at BMW Gallops Autohaus',
+    category: 'Corporate Events',
+    type: 'Event Video',
     icon: Video,
-    image: '/images/hero_bg.png',
-    isReel: true,
+    src: '/images/Gallery/images/Audiohive at BMW Gallops Autohaus.mp4',
+    isVideo: true,
+  },
+  {
+    id: 7,
+    title: 'Live Outdoor Music Concert',
+    category: 'Live Performances',
+    type: 'Event Video',
+    icon: Video,
+    src: '/images/Gallery/images/29-4-2026.mp4',
+    isVideo: true,
+  },
+  {
+    id: 8,
+    title: 'Grand Wedding Sangeet Night',
+    category: 'Weddings',
+    type: 'Event Video',
+    icon: Video,
+    src: '/images/Gallery/images/ADD-ENDSLATE-25122025-01.mp4',
+    isVideo: true,
+  },
+  {
+    id: 9,
+    title: 'Elite DJ Party Setup',
+    category: 'Private Celebrations',
+    type: 'Setup Video',
+    icon: Video,
+    src: '/images/Gallery/images/IMG_1065.MOV',
+    isVideo: true,
   },
 ];
+
+const VideoThumbnail = ({ src }: { src: string }) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handleMouseEnter = () => {
+    if (videoRef.current) {
+      videoRef.current.play().catch((err) => {
+        console.log("Hover video play failed:", err);
+      });
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (videoRef.current) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
+    }
+  };
+
+  return (
+    <video
+      ref={videoRef}
+      src={src}
+      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+      muted
+      playsInline
+      loop
+      preload="metadata"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    />
+  );
+};
 
 export default function Gallery() {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const [activeItemIndex, setActiveItemIndex] = useState<number | null>(null);
 
   const filteredItems = selectedCategory === 'All'
     ? galleryItems
     : galleryItems.filter(item => item.category === selectedCategory);
+
+  const activeItem = activeItemIndex !== null ? filteredItems[activeItemIndex] : null;
+
+  const handlePrev = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (activeItemIndex !== null) {
+      setActiveItemIndex((prev) => {
+        if (prev === null) return null;
+        return prev === 0 ? filteredItems.length - 1 : prev - 1;
+      });
+    }
+  };
+
+  const handleNext = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (activeItemIndex !== null) {
+      setActiveItemIndex((prev) => {
+        if (prev === null) return null;
+        return prev === filteredItems.length - 1 ? 0 : prev + 1;
+      });
+    }
+  };
 
   return (
     <section ref={ref} id="gallery" className="py-20 md:py-32 bg-[#0B0B0B] relative">
@@ -114,7 +209,7 @@ export default function Gallery() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           <AnimatePresence mode="popLayout">
-            {filteredItems.map((item) => {
+            {filteredItems.map((item, index) => {
               const TypeIcon = item.icon;
               return (
                 <motion.div
@@ -124,20 +219,26 @@ export default function Gallery() {
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.4 }}
                   key={item.id}
+                  onClick={() => setActiveItemIndex(index)}
                   whileHover={{ y: -5 }}
                   className="relative group cursor-pointer rounded-3xl overflow-hidden h-80 md:h-[340px] border border-[#2a2a2a] hover:border-[#DFB15B]/40 transition-all duration-300"
                 >
-                  {/* Image */}
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
+                  {/* Media Content */}
+                  {item.isVideo ? (
+                    <VideoThumbnail src={item.src} />
+                  ) : (
+                    <img
+                      src={item.src}
+                      alt={item.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                  )}
+
                   {/* Dark Vignette Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0B] via-[#0B0B0B]/40 to-transparent pointer-events-none" />
 
-                  {/* Play Overlay for Videos and Reels */}
-                  {(item.isVideo || item.isReel) && (
+                  {/* Play Overlay for Videos */}
+                  {item.isVideo && (
                     <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                       <div className="w-16 h-16 rounded-full bg-[#DFB15B]/90 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                         <Play className="w-6 h-6 fill-white ml-1" />
@@ -169,6 +270,83 @@ export default function Gallery() {
           </AnimatePresence>
         </motion.div>
       </div>
+
+      {/* Fullscreen Lightbox Modal */}
+      <AnimatePresence>
+        {activeItem && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setActiveItemIndex(null)}
+            className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-md flex items-center justify-center p-4 md:p-8"
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setActiveItemIndex(null)}
+              className="absolute top-6 right-6 text-white hover:text-[#DFB15B] transition-colors p-2 bg-[#1a1a1a]/85 border border-[#2a2a2a] rounded-full z-[110] cursor-pointer"
+              aria-label="Close lightbox"
+            >
+              <X className="w-6 h-6" />
+            </button>
+
+            {/* Prev Button */}
+            <button
+              onClick={handlePrev}
+              className="absolute left-4 md:left-8 text-white hover:text-[#DFB15B] transition-colors p-3 bg-[#1a1a1a]/85 border border-[#2a2a2a] rounded-full z-[110] cursor-pointer"
+              aria-label="Previous slide"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+
+            {/* Next Button */}
+            <button
+              onClick={handleNext}
+              className="absolute right-4 md:right-8 text-white hover:text-[#DFB15B] transition-colors p-3 bg-[#1a1a1a]/85 border border-[#2a2a2a] rounded-full z-[110] cursor-pointer"
+              aria-label="Next slide"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+
+            {/* Content Container */}
+            <motion.div
+              initial={{ scale: 0.95, y: 15 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.95, y: 15 }}
+              transition={{ type: 'spring', damping: 25, stiffness: 180 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative max-w-5xl w-full flex flex-col items-center justify-center"
+            >
+              <div className="w-full flex items-center justify-center overflow-hidden rounded-2xl border border-[#2a2a2a] bg-black">
+                {activeItem.isVideo ? (
+                  <video
+                    src={activeItem.src}
+                    controls
+                    autoPlay
+                    className="max-h-[70vh] w-auto max-w-full object-contain"
+                  />
+                ) : (
+                  <img
+                    src={activeItem.src}
+                    alt={activeItem.title}
+                    className="max-h-[70vh] w-auto max-w-full object-contain"
+                  />
+                )}
+              </div>
+
+              {/* Title & Metadata */}
+              <div className="text-center mt-6 space-y-2 px-4">
+                <span className="text-xs uppercase tracking-widest text-[#DFB15B] font-bold">
+                  {activeItem.category} &bull; {activeItem.type}
+                </span>
+                <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
+                  {activeItem.title}
+                </h3>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
