@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowDown, ChevronDown, Sparkles } from 'lucide-react';
+import { ArrowDown, ChevronDown } from 'lucide-react';
 
 export default function Hero() {
   const containerVariants = {
@@ -46,13 +46,7 @@ export default function Hero() {
             animate="animate"
             className="space-y-8 lg:col-span-7 flex flex-col justify-center"
           >
-            <motion.div
-              variants={itemVariants}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-[#DFB15B]/10 border border-[#DFB15B]/30 rounded-full text-[#DFB15B] font-semibold text-sm w-fit uppercase tracking-widest"
-            >
-              <Sparkles className="w-4 h-4 animate-pulse" />
-              Audiohive Ahmedabad
-            </motion.div>
+
 
             <motion.h1 variants={itemVariants} className="hero-text tracking-tight font-black leading-none">
               Premium Sound.<br />

@@ -1,5 +1,6 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import ClientLogos from './components/ClientLogos';
 import Services from './components/Services';
 import Equipment from './components/Equipment';
 import EventTypes from './components/EventTypes';
@@ -15,6 +16,7 @@ export default function App() {
     <main className="bg-[#0B0B0B] text-white overflow-x-hidden min-h-screen font-roboto antialiased">
       <Navbar />
       <Hero />
+      <ClientLogos />
       <Services />
       <Equipment />
       <EventTypes />

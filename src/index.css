@@ -17,6 +17,7 @@
   --shadow-glow-red-lg: 0 0 80px rgba(223, 177, 91, 0.4);
 
   --animate-glow: glow 2s ease-in-out infinite;
+  --animate-marquee: marquee 30s linear infinite;
 
   @keyframes glow {
     0%, 100% {
@@ -24,6 +25,15 @@
     }
     50% {
       box-shadow: 0 0 80px rgba(223, 177, 91, 0.6);
+    }
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
     }
   }
 }
