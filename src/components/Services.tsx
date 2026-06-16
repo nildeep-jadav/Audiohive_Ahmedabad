@@ -58,7 +58,7 @@ export default function Services() {
   } as const;
 
   return (
-    <section ref={ref} id="services" className="py-20 md:py-32 bg-[#0B0B0B] relative">
+    <section ref={ref} id="services" className="py-12 md:py-20 bg-[#0B0B0B] relative">
       {/* Visual background glow */}
       <div className="absolute top-0 right-0 w-80 h-80 bg-[#DFB15B]/5 rounded-full filter blur-3xl pointer-events-none" />
 
@@ -67,7 +67,7 @@ export default function Services() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-12 md:mb-16"
         >
           <span className="text-xs uppercase tracking-widest text-[#DFB15B] font-bold">What We Offer</span>
           <h2 className="section-heading mt-2 mb-4">Complete Sound Solutions for Every Event</h2>

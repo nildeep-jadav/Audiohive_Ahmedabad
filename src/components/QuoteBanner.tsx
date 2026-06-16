@@ -20,7 +20,7 @@ export default function QuoteBanner() {
     <section
       ref={ref}
       id="quote"
-      className="py-20 bg-[#0B0B0B] relative overflow-hidden"
+      className="py-12 md:py-16 bg-[#0B0B0B] relative overflow-hidden"
     >
       {/* Background decoration */}
       <div className="absolute inset-0 z-0">

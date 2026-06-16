@@ -79,14 +79,14 @@ export default function WhyAudiohive() {
   } as const;
 
   return (
-    <section ref={ref} id="why-choose" className="py-20 md:py-32 bg-[#0B0B0B]">
+    <section ref={ref} id="why-choose" className="py-12 md:py-20 bg-[#0B0B0B]">
       <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
         {/* Section Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-12 md:mb-16"
         >
           <span className="text-xs uppercase tracking-widest text-[#DFB15B] font-bold">Why Audiohive</span>
           <h2 className="section-heading mt-2 mb-4">Why Choose Audiohive</h2>

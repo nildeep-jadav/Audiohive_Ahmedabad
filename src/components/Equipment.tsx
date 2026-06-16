@@ -70,7 +70,7 @@ export default function Equipment() {
   } as const;
 
   return (
-    <section ref={ref} id="equipment" className="py-20 md:py-32 bg-[#0B0B0B] relative overflow-hidden">
+    <section ref={ref} id="equipment" className="py-12 md:py-20 bg-[#0B0B0B] relative overflow-hidden">
       {/* Background glow elements */}
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-[#DFB15B]/5 rounded-full filter blur-3xl pointer-events-none -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#DFB15B]/5 rounded-full filter blur-3xl pointer-events-none" />
@@ -80,7 +80,7 @@ export default function Equipment() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-12 md:mb-16"
         >
           <span className="text-xs uppercase tracking-widest text-[#DFB15B] font-bold">Premium Lineup</span>
           <h2 className="section-heading mt-2 mb-4">Professional Equipment Lineup</h2>

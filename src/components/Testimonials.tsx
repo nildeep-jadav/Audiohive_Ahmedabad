@@ -57,7 +57,7 @@ export default function Testimonials() {
     : testimonials.filter(item => item.category === selectedCategory);
 
   return (
-    <section ref={ref} id="testimonials" className="py-20 md:py-32 bg-[#0B0B0B] relative overflow-hidden">
+    <section ref={ref} id="testimonials" className="py-12 md:py-20 bg-[#0B0B0B] relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-[#DFB15B]/5 rounded-full filter blur-3xl pointer-events-none" />
 
@@ -67,7 +67,7 @@ export default function Testimonials() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-12"
         >
           <span className="text-xs uppercase tracking-widest text-[#DFB15B] font-bold">Reviews</span>
           <h2 className="section-heading mt-2 mb-4">What People Say</h2>

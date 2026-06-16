@@ -234,14 +234,14 @@ export default function Gallery() {
   };
 
   return (
-    <section ref={ref} id="gallery" className="py-20 md:py-32 bg-[#0B0B0B] relative">
+    <section ref={ref} id="gallery" className="py-12 md:py-20 bg-[#0B0B0B] relative">
       <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
         {/* Section Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-12"
         >
           <span className="text-xs uppercase tracking-widest text-[#DFB15B] font-bold">Showcase</span>
           <h2 className="section-heading mt-2 mb-4">Our Gallery</h2>

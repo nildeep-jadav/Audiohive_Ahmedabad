@@ -57,7 +57,7 @@ export default function EnquiryForm() {
   } as const;
 
   return (
-    <section ref={ref} id="contact" className="py-20 md:py-32 bg-[#0B0B0B] relative overflow-hidden">
+    <section ref={ref} id="contact" className="py-12 md:py-20 bg-[#0B0B0B] relative overflow-hidden">
       {/* Background glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute bottom-0 left-1/2 w-96 h-96 bg-[#DFB15B]/5 rounded-full mix-blend-multiply filter blur-3xl -translate-x-1/2" />
