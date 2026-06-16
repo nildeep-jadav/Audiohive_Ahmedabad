@@ -32,7 +32,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen bg-[#0B0B0B] flex items-center justify-center pt-24 pb-12 overflow-hidden">
+    <section id="hero" className="relative min-h-screen bg-[#0B0B0B] flex items-center justify-center pt-36 lg:pt-24 pb-12 overflow-hidden">
       {/* Background ambient lighting */}
       <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-[#DFB15B]/10 rounded-full mix-blend-screen filter blur-[120px] opacity-20 pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-[#DFB15B]/10 rounded-full mix-blend-screen filter blur-[120px] opacity-20 pointer-events-none" />

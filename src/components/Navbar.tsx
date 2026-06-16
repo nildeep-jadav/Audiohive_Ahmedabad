@@ -63,8 +63,8 @@ export default function Navbar() {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'bg-[#0B0B0B]/90 backdrop-blur-md border-b border-[#2a2a2a] py-4 shadow-lg'
-            : 'bg-transparent py-6'
+            ? 'bg-[#0B0B0B]/90 backdrop-blur-md border-b border-[#2a2a2a] py-3 lg:py-4 shadow-lg'
+            : 'bg-transparent py-3 lg:py-6'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 flex items-center justify-between">
@@ -77,7 +77,7 @@ export default function Navbar() {
             <img
               src="/images/Audiohive logo_Logo [White].png"
               alt="Audiohive Logo"
-              className="h-20 w-auto object-contain transition-transform duration-300 hover:scale-105"
+              className="h-14 lg:h-20 w-auto object-contain transition-transform duration-300 hover:scale-105"
             />
           </a>
 
@@ -157,7 +157,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 top-[72px] z-40 bg-[#0B0B0B]/95 backdrop-blur-lg border-t border-[#2a2a2a] lg:hidden flex flex-col justify-between p-6"
+            className="fixed inset-0 top-[80px] z-40 bg-[#0B0B0B]/95 backdrop-blur-lg border-t border-[#2a2a2a] lg:hidden flex flex-col justify-between p-6"
           >
             <div className="flex flex-col gap-6 pt-4">
               {navLinks.map((link) => {

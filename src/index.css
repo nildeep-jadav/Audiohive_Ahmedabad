@@ -90,7 +90,7 @@
   }
 
   /* Force all navbar and mobile drawer texts to use Roboto Condensed */
-  nav, nav *, [class*="fixed top-[72px]"], [class*="fixed top-[72px]"] * {
+  nav, nav *, [class*="fixed top-[80px]"], [class*="fixed top-[80px]"] * {
     font-family: 'Roboto Condensed', sans-serif !important;
   }
 }
